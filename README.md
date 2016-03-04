@@ -49,6 +49,7 @@ var opts = {
 		},
 		slides:true,
 		slideSpeed: 500,
+		log:false,
 	}
 ```
 These properties can be modified to fit your needs heres how : 
@@ -59,4 +60,13 @@ These properties can be modified to fit your needs heres how :
 - ```props``` : The property you can add your your targets to do special stuffs. Here you will defin the name (you can switch them if needed)
   * ```caller``` : The property to match the caller and the target (In this case it'll be ```data-hides=""```)
   * ```state``` : The property to set the states of of the element
-  * ```slides``` : We haven't talkded about it yet, but if you set this attribute (```data-slides``` in hour case)
+  * ```slides``` : We haven't talkded about it yet, but if you set this attribute (```data-slides``` in hour case). Down there you'll see a global slide to prevent adding it to all of your element
+  * ```slideSpeed``` : Used if you use the ```slides``` property, you can enter any and different speed from a target to another.
+- ```slides``` : This is the global slides I was talking. Any target will act depending on this value except if you override it with the attributes in you html
+- ```slideSpeed``` : The default speed, this also prevent rewriting the speed attribute everywhere
+- ```log``` : If you wanna see what's going on, you can set this to true and everything will be console logged, well, it may reduces the performances of the so it's not recommanded in production
+
+Thank you for using it and feel free to contact me for any question.
+
+Ending joke : 
+> **Q** : Why did the programmer quit his job ? **A** : Because he didn't get arrays. (a raise)
