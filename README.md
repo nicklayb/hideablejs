@@ -68,5 +68,7 @@ These properties can be modified to fit your needs heres how :
 
 Thank you for using it and feel free to contact me for any question.
 
+## Conclusion
+
 Ending joke : 
 > **Q** : Why did the programmer quit his job ? **A** : Because he didn't get arrays. (a raise)
