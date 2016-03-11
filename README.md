@@ -13,6 +13,12 @@ I would like to thank anyone who helped me doing this :
 - My cat Louise, for biting my hand and sitting on my keyboard.
 - Tidge, beacause I thought "Hey is it cool?" and he said "That's cool".
 
+## Last release
+#### Version 1.1
+
+- Added the possibility to defined closed element by default
+- Added Styles to your class element
+
 ## Installation
 Link the js file (Note that the path of the file may be different for you)
 ```html
@@ -46,9 +52,17 @@ var opts = {
 			state:'hidden',
 			slides:'slides',
 			slideSpeed:'slideSpeed',
+			default:'default',
+		},
+		styles:{
+			caller:{
+				cursor:'pointer',
+			},
+			target:{},
 		},
 		slides:true,
 		slideSpeed: 500,
+		withStyle:true,
 		log:false,
 	}
 ```
@@ -62,10 +76,15 @@ These properties can be modified to fit your needs heres how :
   * ```state``` : The property to set the states of of the element
   * ```slides``` : We haven't talkded about it yet, but if you set this attribute (```data-slides``` in hour case). Down there you'll see a global slide to prevent adding it to all of your element
   * ```slideSpeed``` : Used if you use the ```slides``` property, you can enter any and different speed from a target to another.
+  * ```default``` : The default property is used to define if an element is closed by default by adding the value ```closed``` to the property, and tada! Magic!
+- ```styles``` : You can define some styles that'll be applied to the respective ```class``` values.
+  * ```caller``` : Will apply the style (Which is by default the cursor to pointer) to all of your caller class
+  * ```target``` : Will apply the style to all of your target class
 - ```slides``` : This is the global slides I was talking. Any target will act depending on this value except if you override it with the attributes in you html
 - ```slideSpeed``` : The default speed, this also prevent rewriting the speed attribute everywhere
 - ```log``` : If you wanna see what's going on, you can set this to true and everything will be console logged, well, it may reduces the performances of the so it's not recommanded in production
 
+If you want to add stylable classes, you have to add them to you ```class``` object and your ```styles``` object. If you don't you'll broke everything and you may get mad.
 
 ## Conclusion
 

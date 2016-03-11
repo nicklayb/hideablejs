@@ -2,7 +2,7 @@
  * hideable.js	//	Hide simply,flexibly,beautifully,gigglittely and surprisingly nicely
  *
  * Author : Nicolas Boisvert //	nicklayb :: nicolas.boisvert@icloud.com
- * Version 1.0
+ * Version 1.1
  */
 
 $(function(){
@@ -27,11 +27,25 @@ $(function(){
 			slides:'slides',
 			//	Override the speed of the slide
 			slideSpeed:'slideSpeed',
+			//	Default state of the hideable element, set this property to "closed" if you want it to be closed by default
+			default:'default',
+		},
+		//	Define default style for your classes elements. Define them as you would pass object to jquery css method
+		//		You could add any other class but you must have defined them in the class object also
+		styles:{
+			//	Class for the caller
+			caller:{
+				cursor:'pointer',
+			},
+			//	Class for the target
+			target:{},
 		},
 		//	Do you want the element to slide or not
 		slides:true,
 		//	Setup the speed of the slides
 		slideSpeed: 500,
+		//	Define if you want to apply the styles defined to elements
+		withStyle:true,
 		//	Returns the data attributes
 		data:function(opt){
 			return 'data-'+this.props[opt];
@@ -44,10 +58,21 @@ $(function(){
 		dataNull:function(elem,opt){
 			return (($(elem).attr(this.data(opt)) !== undefined && $(elem).attr(this.data(opt)) != '') ? $(elem).attr(this.data(opt)) : undefined);
 		},
+		//	Apply styles to element
+		applyStyles:function(){
+			$.each(this.styles, function(i,v){
+				$('.'+opts.classes[i]).css(opts.styles[i]);
+			});
+		},
 		//	Log out what's going on (reduces performances)
 		log:false,
 	}
 	$(document).ready(function(){
+		$('.'+opts.classes.target+'['+opts.data('default')+'="closed"]').hide().attr(opts.data('state'), true);
+		if(opts.withStyle){
+			opts.applyStyles();
+		}
+		opts.applyStyles();
 		$('.'+opts.classes.caller).on(opts.event, function(){
 			if(opts.log){console.log('triggered');}
 			var name = $(this).attr(opts.data('caller')),
