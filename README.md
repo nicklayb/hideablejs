@@ -82,6 +82,7 @@ These properties can be modified to fit your needs heres how :
   * ```target``` : Will apply the style to all of your target class
 - ```slides``` : This is the global slides I was talking. Any target will act depending on this value except if you override it with the attributes in you html
 - ```slideSpeed``` : The default speed, this also prevent rewriting the speed attribute everywhere
+- ```withStyle``` : If you don't want any style to be applied, turn this off
 - ```log``` : If you wanna see what's going on, you can set this to true and everything will be console logged, well, it may reduces the performances of the so it's not recommanded in production
 
 If you want to add stylable classes, you have to add them to you ```class``` object and your ```styles``` object. If you don't you'll broke everything and you may get mad.
