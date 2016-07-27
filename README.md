@@ -20,6 +20,14 @@ I would like to thank anyone who helped me doing this :
 - Added Styles to your class element
 
 ## Installation
+
+### npm
+
+Just call `npm install hideablejs` in you terminal
+
+#### Download the file from the repo
+Click download, and download
+
 Link the js file (Note that the path of the file may be different for you)
 ```html
 <script type="text/javascript" src="/js/hideable/hideable.js"></script>
@@ -66,7 +74,7 @@ var opts = {
 		log:false,
 	}
 ```
-These properties can be modified to fit your needs heres how : 
+These properties can be modified to fit your needs heres how :
 - ```event``` : The event that will trigger the hides, could be any jquery events that you can ship to the ```.on()``` method.
 - ```classes``` : You can rename thoses classes for something else
   * ```caller``` : Represent the classe of the element that'll trigger the event
@@ -91,5 +99,5 @@ If you want to add stylable classes, you have to add them to you ```class``` obj
 
 Thank you for using it and feel free to contact me for any question.
 
-Ending joke : 
+Ending joke :
 > **Q** : Why did the programmer quit his job ? **A** : Because he didn't get arrays. (a raise)
